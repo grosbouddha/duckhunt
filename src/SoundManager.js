@@ -5,12 +5,17 @@ YUI().use('node', function(Y) {
 	soundManager.defaultOptions = {
 			autoLoad: true,
 			autoPlay: false,
-			volume: 50
+			volume: 50,
+			preferFlash: false
 	};
 
 	soundManager.loopSound = function (soundID) {
 		  window.setTimeout(function() {
-		    soundManager.play(soundID,{onfinish:function(){soundManager.loopSound(soundID);}});
+		    soundManager.play(soundID, {
+		    	"onfinish": function() {
+		    		soundManager.loopSound(soundID);
+		    	}
+		    });
 		  },1);
 	};
 
@@ -18,6 +23,7 @@ YUI().use('node', function(Y) {
 
 		soundManager.defaultOptions.id = id;
 		soundManager.defaultOptions.url = AppConf.serverRoot + url;
+		soundManager.defaultOptions.autoLoad = true;
 
 		if(typeof(customConf) == 'object') {
 			for(var key in customConf) {

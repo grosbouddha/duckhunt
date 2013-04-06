@@ -31,7 +31,7 @@
 
 
 			window.AppConf = {
-	 			"serverRoot": window.location.origin + window.location.pathname,
+	 			"serverRoot":  window.location.protocol + "//" + window.location.host + window.location.pathname,
 	 			//"bootstrapLevel": 0,
 	 			"debug": CGIParams['debug'] ? true : false
 			};

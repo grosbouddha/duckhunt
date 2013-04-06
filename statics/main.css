@@ -33,6 +33,7 @@ body {
 	vertical-align: top;
 	text-decoration: none;	
 }
+.link:link,
 .link:active,
 .link:visited {
 	color:  gray;

@@ -52,6 +52,10 @@ YUI().use('node', function(Y) {
 		    var initMain = function() {
 		    	if(soundManager.allSongsLoaded) {
 
+		    		// Hiding loading screen:
+		    		document.getElementById("loading-screen").style.display = "none";
+		    		
+		    		// Starting the whole thing:
 		    		DH.gameManager = new DH.GameManager() ;
 
 		    		if(AppConf.bootstrapLevel == 'default') {

@@ -3,10 +3,16 @@
 <head>
 	<link href='http://fonts.googleapis.com/css?family=Tauri' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="statics/main.css" />
-	<title>Duck Hunt</title>
+	<title>Duck-Hunt</title>
 </head>
 <body>
-	<div id="mainGameSceneContainer" class="gameSceneContainer"></div>
+	<div id="mainGameSceneContainer" class="gameSceneContainer">
+
+		<!-- HTML-Inlined loader -->
+		<div id="loading-screen" style="border: solid 4px gray; margin: 0 auto; overflow:hidden; width: 512px; height: 448px; position: relative; text-align: center;">
+			<img style="margin-top: 185px;" src="/statics/duckhunt_loader.gif" alt="Loader for DuckHunt game." />
+		</div>
+    </div>
 	<div class="meta-wrapper">
 		By <a class="link twitter-link" href="https://twitter.com/grosbouddha" target="_blank">@grosbouddha</a> -
 		<a class="link github-link" href="https://github.com/grosbouddha/duckhunt-canvas/" target="_blank">See code on GitHub</a> -

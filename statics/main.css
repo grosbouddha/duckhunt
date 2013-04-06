@@ -1,0 +1,14 @@
+
+body {
+	background-color: #000000 ;
+}
+
+.gameSceneContainer div {
+	margin-left: auto ;
+	margin-right: auto ;
+	position: relative;
+	top: 20px;
+	cursor: crosshair ;
+	border: solid 4px gray ;
+
+}

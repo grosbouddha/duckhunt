@@ -3,8 +3,8 @@ DuckHunt
 
 WAT?
 ----
-  A remake of the classic DuckHunt NES game implemented using the HTML5 canvas element.
-
+A remake of the classic [DuckHunt NES game] (http://en.wikipedia.org/wiki/Duck_Hunt) ([video] (http://www.youtube.com/watch?v=x-daxzVxrQI)) implemented using the HTML5 canvas element.
+You can play it here: [Play] (http://grosbouddha.github.io/duckhunt/)
 
 What's inside?
 --------------
@@ -13,4 +13,15 @@ What's inside?
 * [Yahoo! UI library] (http://yuilibrary.com/) - for all the internal architecture plumbing 
 * [SoundManager2](http://www.schillmania.com/projects/soundmanager2/) - for everything sound/music related
 * assets from Nintendo
+
+Documentation
+-------------
+* Read my ugly code
+* A [quick prez] (https://docs.google.com/presentation/d/1l8L7YztWLHbxU8j_E1InVYaXufH76ghRVcmMTZuJBs0/edit?usp=sharing&authkey=COmsiZAL) when I demoed this Game at MontrealJS
+
+Expectations
+------------
+
+This mini-project was made few years ago and just to kill some time.
+Don't expect it to be too stable or using top-notch library updates and tricks.
 

@@ -4,6 +4,7 @@ DuckHunt
 WAT?
 ----
 A remake of the classic [DuckHunt NES game] (http://en.wikipedia.org/wiki/Duck_Hunt) ([video] (http://www.youtube.com/watch?v=x-daxzVxrQI)) implemented using the HTML5 canvas element.
+
 You can play it here: [Play] (http://grosbouddha.github.io/duckhunt/)
 
 What's inside?
@@ -17,7 +18,7 @@ What's inside?
 Documentation
 -------------
 * Read my ugly code
-* A [quick prez] (https://docs.google.com/presentation/d/1l8L7YztWLHbxU8j_E1InVYaXufH76ghRVcmMTZuJBs0/edit?usp=sharing&authkey=COmsiZAL) when I demoed this Game at MontrealJS
+* A [quick prez] (https://docs.google.com/presentation/d/1l8L7YztWLHbxU8j_E1InVYaXufH76ghRVcmMTZuJBs0/edit?usp=sharing&authkey=COmsiZAL) when I showed this game at MontrealJS
 
 Expectations
 ------------

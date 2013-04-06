@@ -188,43 +188,43 @@ YUI().use('node', function(Y) {
 	} ;
 
 	DH.GameState.prototype.setNumberOfDuck = function(number) {
-		this.duckNumber = number ;
+		this.duckNumber = number;
 	};
 
 	DH.GameState.prototype.removeBullet = function() {
-		this.setRemainingBullet(this.remainingBullets - 1) ;
+		this.setRemainingBullet(this.remainingBullets - 1);
 	} ;
 
 	DH.GameState.prototype.setRemainingBullet = function(number) {
 		this.remainingBullets = number ;
-		DH.publisher.fire(DH.Events.BULLET_CHANGED) ;
+		DH.publisher.fire(DH.Events.BULLET_CHANGED);
 
 		if(this.remainingBullets <= 0) {
-			DH.publisher.fire(DH.Events.NO_MORE_AMMO) ;
+			DH.publisher.fire(DH.Events.NO_MORE_AMMO);
 		}
 	};
 
 	DH.GameState.prototype.addToScore = function(score) {
-		this.currentScore += score ;
-		DH.publisher.fire(DH.Events.SCORE_CHANGED) ;
+		this.currentScore += score;
+		DH.publisher.fire(DH.Events.SCORE_CHANGED);
 	} ;
 
 	DH.GameState.prototype.setDuckFlyingAway = function(state) {
-		this.duckFlyingAway = state ;
+		this.duckFlyingAway = state;
 		if(this.duckFlyingAway) {
-			DH.publisher.fire(DH.Events.FLY_AWAY) ;
+			DH.publisher.fire(DH.Events.FLY_AWAY);
 		}
 		else {
-			DH.publisher.fire(DH.Events.NOT_FLY_AWAY) ;
+			DH.publisher.fire(DH.Events.NOT_FLY_AWAY);
 		}
 	} ;
 
 	DH.GameState.prototype.setCurrentRound = function(roundNumber) {
 		this.currentRound = roundNumber;
-		DH.publisher.fire(DH.Events.ROUND_CHANGED) ;
+		DH.publisher.fire(DH.Events.ROUND_CHANGED);
 	} ;
 
 	Y.augment(DH.GameState, Y.EventTarget);
-	DH.gameState = new DH.GameState() ;
+	DH.gameState = new DH.GameState();
 });
 

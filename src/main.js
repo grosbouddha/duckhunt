@@ -42,13 +42,13 @@ YUI().use('node', function(Y) {
 				window.onfocus = DH.gameCanvas.onWindowFocus;
 				window.onblur = DH.gameCanvas.onWindowBlur;
 			}
-
-		    if(AppConf.debug) {
-		    	DH.gameCanvas.addEventListener("click", function(evt) {
-		    		window.document.title = "x: " + evt.layerX + " - y: "+evt.layerY;
-			    });
-		    }
-
+			
+			DH.gameCanvas.addEventListener("click", function(evt) {
+	    		if(AppConf.debug) {
+	    			window.document.title = "x: " + evt.layerX + " - y: " + evt.layerY;
+	    		}
+		    });
+		    
 		    var initMain = function() {
 		    	if(soundManager.allSongsLoaded) {
 

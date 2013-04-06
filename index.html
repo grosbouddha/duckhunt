@@ -18,11 +18,23 @@
 	-->
 
 	<script>
-		window.AppConf = {
- 			"serverRoot": window.location.origin + window.location.pathname,
- 			//"bootstrapLevel": 0,
- 			"debug": true
-		};
+		(function() {
+			var CGIParams = (function(){
+				var query = {}, pair, search = location.search.substring(1).split("&"), i = search.length;
+				while (i--) {
+					pair = search[i].split("=");
+					query[pair[0]] = decodeURIComponent(pair[1]);
+				}
+				return query;
+			})();
+
+
+			window.AppConf = {
+	 			"serverRoot": window.location.origin + window.location.pathname,
+	 			//"bootstrapLevel": 0,
+	 			"debug": CGIParams['debug'] ? true : false
+			};
+		})();
 	</script>
 
 	<script type="text/javascript" src="src/AppConf.js"></script>

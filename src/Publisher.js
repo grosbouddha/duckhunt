@@ -15,7 +15,6 @@ YUI().use('node', function(Y) {
 		DUCK_APPEAR_ON_SCENE : 'duck_appear_on_scene',
 		KILLED_DUCK_CHANGED : 'killed_duck_changed',
 		NOT_FLY_AWAY : 'not_fly_away',
-
 		LAUNCH_GAME_A : 'launch_game_A',
 		LAUNCH_GAME_B : 'launch_game_B'
 	};
@@ -24,10 +23,9 @@ YUI().use('node', function(Y) {
 
 	DH.publisher.name = 'global_publisher';
 	DH.publisher.defaultGlobalEventConf = {
-		    broadcast:  2,   // global notification
-		    emitFacade: true // emit a facade so we get the event target
-		};
-
+		broadcast:  2,   // global notification
+		emitFacade: true // emit a facade so we get the event target
+	};
 
 	DH.publisher.publish(DH.Events.TRIGGER_PULL , DH.publisher.defaultGlobalEventConf);
 	DH.publisher.publish(DH.Events.NO_MORE_AMMO , DH.publisher.defaultGlobalEventConf);
@@ -42,9 +40,6 @@ YUI().use('node', function(Y) {
 	DH.publisher.publish(DH.Events.KILLED_DUCK_CHANGED , DH.publisher.defaultGlobalEventConf);
 	DH.publisher.publish(DH.Events.NOT_FLY_AWAY , DH.publisher.defaultGlobalEventConf);
 
-
 	DH.publisher.publish(DH.Events.LAUNCH_GAME_A , DH.publisher.defaultGlobalEventConf);
 	DH.publisher.publish(DH.Events.LAUNCH_GAME_B , DH.publisher.defaultGlobalEventConf);
-
-
 });

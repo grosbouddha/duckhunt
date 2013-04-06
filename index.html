@@ -1,11 +1,17 @@
 <html>
 <head>
+	<link href='http://fonts.googleapis.com/css?family=Tauri' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="statics/main.css" />
 	<title>Duck Hunt</title>
 </head>
 <body>
 	<div id="mainGameSceneContainer" class="gameSceneContainer"></div>
-
+	<div class="meta-wrapper">
+		By <a class="link twitter-link" href="https://twitter.com/grosbouddha" target="_blank">@grosbouddha</a> -
+		<a class="link github-link" href="https://github.com/grosbouddha/duckhunt-canvas/" target="_blank">See code on GitHub</a> -
+		<a href="https://twitter.com/share" class="twitter-share-button" style="vertical-align:top;" data-via="grosbouddha">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>	
+	</div>
 	<script type="text/javascript" src="externalLib/fullYUI3.1.js"></script>
 	<!-- 
 	  <script type="text/javascript" src="http://yui.yahooapis.com/combo?3.1.0/build/yui/yui.js&3.1.0/build/oop/oop.js&3.1.0/build/event-custom/event-custom.js&3.1.0/build/dom/dom.js&3.1.0/build/pluginhost/pluginhost.js&3.1.0/build/node/node.js&3.1.0/build/event/event.js&3.1.0/build/node/align-plugin.js&3.1.0/build/attribute/attribute.js&3.1.0/build/async-queue/async-queue.js&3.1.0/build/base/base.js&3.1.0/build/anim/anim.js&3.1.0/build/plugin/plugin.js&3.1.0/build/cache/cache.js&3.1.0/build/collection/collection.js&3.1.0/build/classnamemanager/classnamemanager.js&3.1.0/build/intl/intl.js&3.1.0/build/dump/dump.js&3.1.0/build/substitute/substitute.js&3.1.0/build/widget/widget.js&3.1.0/build/console/lang/console.js&3.1.0/build/console/console.js&3.1.0/build/console/console-filters.js&3.1.0/build/cookie/cookie.js&3.1.0/build/json/json.js&3.1.0/build/dataschema/dataschema.js&3.1.0/build/datatype/lang/datatype.js&3.1.0/build/datatype/lang/datatype-date.js&3.1.0/build/datatype/datatype.js&3.1.0/build/querystring/querystring-stringify-simple.js&3.1.0/build/queue-promote/queue-promote.js&3.1.0/build/io/io.js&3.1.0/build/datasource/datasource.js&3.1.0/build/event/event-synthetic.js&3.1.0/build/history/history.js&3.1.0/build/imageloader/imageloader.js&3.1.0/build/loader/loader.js&3.1.0/build/event-simulate/event-simulate.js&3.1.0/build/node/node-event-simulate.js&3.1.0/build/dd/dd.js&3.1.0/build/node-focusmanager/node-focusmanager.js&3.1.0/build/node-menunav/node-menunav.js&3.1.0/build/widget/widget-stdmod.js&3.1.0/build/widget/widget-stack.js&3.1.0/build/widget/widget-position.js&3.1.0/build/widget/widget-position-constrain.js&3.1.0/build/widget/widget-position-align.js&3.1.0/build/overlay/overlay.js&3.1.0/build/profiler/profiler.js&3.1.0/build/querystring/querystring.js&3.1.0/build/querystring/querystring-parse-simple.js&3.1.0/build/async-queue/async-queue.js&3.1.0/build/dom/selector-css3.js&3.1.0/build/node/shim-plugin.js&3.1.0/build/slider/slider.js&3.1.0/build/sortable/sortable.js&3.1.0/build/stylesheet/stylesheet.js&3.1.0/build/swfdetect/swfdetect.js&3.1.0/build/swf/swf.js&3.1.0/build/widget/widget-parent.js&3.1.0/build/widget/widget-child.js&3.1.0/build/tabview/tabview.js&3.1.0/build/widget/widget-locale.js&3.1.0/build/widget-anim/widget-anim.js&3.1.0/build/test/test.js&3.1.0/build/tabview/tabview-plugin.js"></script>

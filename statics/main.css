@@ -3,12 +3,35 @@ body {
 	background-color: #000000 ;
 }
 
+.gameSceneContainer {
+	margin-top: 20px;	
+}
+
 .gameSceneContainer div {
-	margin-left: auto ;
-	margin-right: auto ;
-	position: relative;
-	top: 20px;
+	margin: 0 auto;
 	cursor: crosshair ;
 	border: solid 4px gray ;
-
 }
+
+.meta-wrapper {
+	text-align: center;
+	vertical-align: top;
+	padding-top: 35px;
+	font-size: 14px;
+	line-height: 20px;
+    font-family: 'Tauri', sans-serif;
+    color: gray;
+}
+
+.link {
+	vertical-align: top;
+	text-decoration: none;	
+}
+.link:active,
+.link:visited {
+	color:  gray;
+}
+.link:hover {
+	text-decoration: underline;
+	color: pink;
+};

@@ -6,17 +6,13 @@ if(typeof DH == "undefined") {
 }
 
 YUI().use('node', function(Y) {
-
-
-
 	Y.on("load", function() {
 
 			DH.gameCanvas = new Canvas(
 		    		document.getElementById(AppConf.domRootId),
 		    		AppConf.gameCanvasInfo.width,
 		    		AppConf.gameCanvasInfo.height,
-		    		{'cursor' : 'crosshair'}
-		    		);
+		    		{'cursor' : 'crosshair'});
 
 			DH.gameCanvas.publish_shot = function(evt) {
 		    	DH.publisher.fire(DH.Events.TRIGGER_PULL);
@@ -34,8 +30,6 @@ YUI().use('node', function(Y) {
 				DH.gameCanvas.isGunActive = false ;
 			};
 
-
-
 		    if(AppConf.debug) {
 
 		    	DH.gameCanvas.addEventListener("click", function(evt) {
@@ -43,23 +37,20 @@ YUI().use('node', function(Y) {
 			    });
 		    }
 
-
 		    var initMain = function() {
 		    	if(soundManager.allSongsLoaded) {
 
 		    		DH.gameManager = new DH.GameManager() ;
 
 		    		if(AppConf.bootstrapLevel == 'default') {
-
 		    			DH.gameManager.displayFirstScreen();
 		    		}
 		    		else {
 		    			if(typeof(DH.gameManager['BOOTSTRAP_' + AppConf.bootstrapLevel]) == 'function') {
-
 		    				DH.gameManager['BOOTSTRAP_' + AppConf.bootstrapLevel]() ;
 		    			}
 		    			else {
-		    				console.error('Not valid bootstrap DH.gameManager.BOOTSTRAP_'+AppConf.bootstrapLevel  +'() is not a function.') ;
+		    				console.error('Not valid bootstrap DH.gameManager.BOOTSTRAP_' + AppConf.bootstrapLevel  + '() is not a function.') ;
 		    			}
 		    		}
 		    	}
@@ -67,9 +58,6 @@ YUI().use('node', function(Y) {
 		    		setTimeout(initMain, 500) ;
 		    	}
 			};
-
-
-
 			DH.ImgMngr.setFirstAction(initMain);
 			DH.ImgMngr.startLoading();
 		});

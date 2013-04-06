@@ -40,7 +40,6 @@ YUI().use('node', function(Y) {
 				},
 				AppConf.gameInfo.roundMessageDuration
 		);
-
 	};
 
 	DH.MessageManager.prototype.showFlyAwayMessage = function() {

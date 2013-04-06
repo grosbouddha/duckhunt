@@ -1,4 +1,3 @@
-
 YUI().use('node', function(Y) {
 
 	if(typeof DH == "undefined") {
@@ -10,17 +9,13 @@ YUI().use('node', function(Y) {
 		this.gameStateProperlyInitialized = false ;
 
 		this.currentScore = 0;
-
 		this.currentRound = 0 ;
 		this.currentSubRound = 0 ;
-
 		this.killedDuckColors = [];
-
 		this.remainingBullets = null ;
 		this.killedDucks = null ;
 		this.duckFlyingAway = false ;
 		this.duckNumber = 1 ;
-
 	} ;
 
 	DH.GameState.DEFAULT_KILLED_DUCKS = [0,0,0,0,0,0,0,0,0,0] ;
@@ -28,12 +23,9 @@ YUI().use('node', function(Y) {
 	DH.GameState.prototype.resetGameState = function() {
 
 		this.currentScore = 0;
-
 		this.currentRound = 0 ;
 		this.currentSubRound = 0 ;
-
 		this.killedDuckColors = [];
-
 		this.remainingBullets = 3;
 		this.killedDuckCounter = 0;
 		this.goneDuckCounter = 0;
@@ -41,9 +33,7 @@ YUI().use('node', function(Y) {
 		DH.publisher.fire(DH.Events.KILLED_DUCK_CHANGED) ;
 
 		this.duckNumber = 1 ;
-
 		this.gameStateProperlyInitialized = true ;
-
 	} ;
 
 	DH.GameState.prototype.initializeRound = function() {
@@ -52,7 +42,6 @@ YUI().use('node', function(Y) {
 		Y.log('Current round: '+this.currentRound, 'info', 'DH.gameState') ;
 
 		this.killedDuckColors = [];
-
 		this.setRemainingBullet(3);
 		this.currentSubRound = 0;
 
@@ -94,7 +83,6 @@ YUI().use('node', function(Y) {
 				hasChanged = true;
 			}
 		}
-
 		if(hasChanged) {
 			DH.publisher.fire(DH.Events.KILLED_DUCK_CHANGED) ;
 		}
@@ -107,7 +95,6 @@ YUI().use('node', function(Y) {
 		if(this.goneDuckCounter >= this.duckNumber) {
 			DH.publisher.fire(DH.Events.NO_MORE_DUCKS_ON_SCENE) ;
 		}
-
 		//this._removeDuckIdFromDucksOnScene(duckId) ;
 	};
 
@@ -134,14 +121,6 @@ YUI().use('node', function(Y) {
 	    }
 	};
 
-	/*
-	DH.GameState.prototype._removeDuckId = function(duckId) {
-
-
-	};
-*/
-
-
 	// Depending on current round, subround and a random component,
 	// send back a duck config (black (easy), blue (medium) or brown (very hard to kill))
 	DH.GameState.prototype.duckConfigGenerator = function() {
@@ -159,7 +138,6 @@ YUI().use('node', function(Y) {
 				returnedConfig = DH.Duck.BLACK_DUCK_CONFIG ;
 			}
 		}
-
 		else if(this.currentRound < 8) {
 
 			// Round 4 to 7, you should have often blue ducks and sometimes brown one:
@@ -174,7 +152,6 @@ YUI().use('node', function(Y) {
 			}
 		}
 		else {
-
 			// Round 8,9 and 10
 			if(randomNumber < 30) {
 				returnedConfig = DH.Duck.BROWN_DUCK_CONFIG ;
@@ -186,9 +163,7 @@ YUI().use('node', function(Y) {
 				returnedConfig = DH.Duck.BLACK_DUCK_CONFIG ;
 			}
 		}
-
 		return returnedConfig;
-
 	};
 
 	DH.GameState.prototype.isLastSubRound = function() {
@@ -209,7 +184,6 @@ YUI().use('node', function(Y) {
 
 			this.currentDuckIds[currentId] = currentId ;
 		}
-
 		return duckIds;
 	} ;
 
@@ -218,7 +192,6 @@ YUI().use('node', function(Y) {
 	};
 
 	DH.GameState.prototype.removeBullet = function() {
-
 		this.setRemainingBullet(this.remainingBullets - 1) ;
 	} ;
 
@@ -232,13 +205,11 @@ YUI().use('node', function(Y) {
 	};
 
 	DH.GameState.prototype.addToScore = function(score) {
-
 		this.currentScore += score ;
 		DH.publisher.fire(DH.Events.SCORE_CHANGED) ;
 	} ;
 
 	DH.GameState.prototype.setDuckFlyingAway = function(state) {
-
 		this.duckFlyingAway = state ;
 		if(this.duckFlyingAway) {
 			DH.publisher.fire(DH.Events.FLY_AWAY) ;
@@ -249,13 +220,11 @@ YUI().use('node', function(Y) {
 	} ;
 
 	DH.GameState.prototype.setCurrentRound = function(roundNumber) {
-
 		this.currentRound = roundNumber;
 		DH.publisher.fire(DH.Events.ROUND_CHANGED) ;
 	} ;
 
 	Y.augment(DH.GameState, Y.EventTarget);
-
 	DH.gameState = new DH.GameState() ;
 });
 

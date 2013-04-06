@@ -2,6 +2,8 @@
 YUI().use('node', function(Y) {
 
 	DH.Events = {
+		WINDOW_FOCUS: "window_focus",
+		WINDOW_BLUR: "window_blur",
 		TRIGGER_PULL : 'trigger_pull',
 		NO_MORE_AMMO : 'no_more_ammo',
 		BULLET_CHANGED : 'bullet_changed',
@@ -27,6 +29,8 @@ YUI().use('node', function(Y) {
 		emitFacade: true // emit a facade so we get the event target
 	};
 
+	DH.publisher.publish(DH.Events.WINDOW_FOCUS , DH.publisher.defaultGlobalEventConf);
+	DH.publisher.publish(DH.Events.WINDOW_BLUR , DH.publisher.defaultGlobalEventConf);
 	DH.publisher.publish(DH.Events.TRIGGER_PULL , DH.publisher.defaultGlobalEventConf);
 	DH.publisher.publish(DH.Events.NO_MORE_AMMO , DH.publisher.defaultGlobalEventConf);
 	DH.publisher.publish(DH.Events.BULLET_CHANGED , DH.publisher.defaultGlobalEventConf);

@@ -1,6 +1,6 @@
 
 body {
-	background-color: #000000 ;
+	background-color: #000;
 }
 
 .gameSceneContainer {
@@ -9,8 +9,8 @@ body {
 
 .gameSceneContainer div {
 	margin: 0 auto;
-	cursor: crosshair ;
-	border: solid 4px gray ;
+	cursor: crosshair;
+	border: solid 4px gray;
 }
 
 .meta-wrapper {

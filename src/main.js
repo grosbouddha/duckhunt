@@ -50,7 +50,7 @@ YUI().use('node', function(Y) {
 		    });
 		    
 		    var initMain = function() {
-		    	if(soundManager.allSongsLoaded) {
+		    	if(soundManager.initialized) {
 
 		    		// Hiding loading screen:
 		    		document.getElementById("loading-screen").style.display = "none";

@@ -1,61 +1,65 @@
 YUI().use('node', function(Y) {
 
-	soundManager.allSongsLoaded = false ;
+	DH.soundManager = window.soundManager ;
+	DH.soundManager.setup({
+		url: "/",
+		onready: function() {
+			soundManager.createSoundHelper('shot1'					, "/statics/sounds/shot.mp3");
+			soundManager.createSoundHelper('shot2'					, "/statics/sounds/shot.mp3");
+			soundManager.createSoundHelper('shot3'					, "/statics/sounds/shot.mp3");
+			soundManager.createSoundHelper('duckHittingGround'		, "/statics/sounds/duckHittingGround.mp3");
+			soundManager.createSoundHelper('duckRelease'			, "/statics/sounds/duckRelease.mp3");
+			soundManager.createSoundHelper('laughingDog'			, "/statics/sounds/laughingDog.mp3");
+			soundManager.createSoundHelper('roundIntroduction'		, "/statics/sounds/roundIntroduction.mp3");
+			soundManager.createSoundHelper('mainTheme'				, "/statics/sounds/mainTheme.mp3");
+			soundManager.createSoundHelper('waf'					, "/statics/sounds/waf.mp3");
+			soundManager.createSoundHelper('waf3'					, "/statics/sounds/waf3.mp3");
+			soundManager.createSoundHelper('wingFlap'				, "/statics/sounds/wingFlap20sec.mp3", { volume : 15});
+			soundManager.createSoundHelper('coin'			     	, "/statics/sounds/coin.mp3", { volume : 70});
 
-	soundManager.defaultOptions = {
+			soundManager.initialized = true ;
+		},
+		ontimeout: function() {
+			soundManager.initialized = true ;
+		},
+		preferFlash: false
+	});
+
+	DH.soundManager.initialized = false ;
+
+	DH.soundManager.defaultOptions = {
 			autoLoad: true,
 			autoPlay: false,
-			volume: 50,
-			preferFlash: false
+			volume: 50		
 	};
 
-	soundManager.loopSound = function (soundID) {
+	DH.soundManager.loopSound = function (soundID) {
 		  window.setTimeout(function() {
-		    soundManager.play(soundID, {
+		    DH.soundManager.play(soundID, {
 		    	"onfinish": function() {
-		    		soundManager.loopSound(soundID);
+		    		DH.soundManager.loopSound(soundID);
 		    	}
 		    });
 		  },1);
 	};
 
-	soundManager.createSoundHelper = function(id, url, customConf) {
+	DH.soundManager.createSoundHelper = function(id, url, customConf) {
 
-		soundManager.defaultOptions.id = id;
-		soundManager.defaultOptions.url = AppConf.serverRoot + url;
-		soundManager.defaultOptions.autoLoad = true;
+		DH.soundManager.defaultOptions.id = id;
+		DH.soundManager.defaultOptions.url = AppConf.serverRoot + url;
+		DH.soundManager.defaultOptions.autoLoad = true;
 
 		if(typeof(customConf) == 'object') {
 			for(var key in customConf) {
 				if(customConf.hasOwnProperty(key)) {
-					soundManager.defaultOptions[key] = customConf[key] ;
+					DH.soundManager.defaultOptions[key] = customConf[key] ;
 				}
 			}
 
 		}
 
-		return soundManager.createSound(soundManager.defaultOptions);
+		return DH.soundManager.createSound(DH.soundManager.defaultOptions);
 	};
-
-	soundManager.onload = function() {
-		soundManager.createSoundHelper('shot1'					, "/statics/sounds/shot.mp3");
-		soundManager.createSoundHelper('shot2'					, "/statics/sounds/shot.mp3");
-		soundManager.createSoundHelper('shot3'					, "/statics/sounds/shot.mp3");
-		soundManager.createSoundHelper('duckHittingGround'		, "/statics/sounds/duckHittingGround.mp3");
-		soundManager.createSoundHelper('duckRelease'			, "/statics/sounds/duckRelease.mp3");
-		soundManager.createSoundHelper('laughingDog'			, "/statics/sounds/laughingDog.mp3");
-		soundManager.createSoundHelper('roundIntroduction'		, "/statics/sounds/roundIntroduction.mp3");
-		soundManager.createSoundHelper('mainTheme'				, "/statics/sounds/mainTheme.mp3");
-		soundManager.createSoundHelper('waf'					, "/statics/sounds/waf.mp3");
-		soundManager.createSoundHelper('waf3'					, "/statics/sounds/waf3.mp3");
-		soundManager.createSoundHelper('wingFlap'				, "/statics/sounds/wingFlap20sec.mp3", { volume : 15});
-		soundManager.createSoundHelper('coin'			     	, "/statics/sounds/coin.mp3", { volume : 70});
-
-		soundManager.allSongsLoaded = true ;
-	};
-
-
-	DH.soundManager = window.soundManager ;
 
 	DH.soundManager.mute_ = function() {
 		DH.soundManager.mute();

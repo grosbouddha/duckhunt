@@ -32,12 +32,6 @@ YUI().use('node', function(Y) {
 	};
 
 	soundManager.onload = function() {
-
-		/*soundManager.sounds = {
-				wingFlap : soundManager.createSoundHelper('wingFlap'				, "/statics/sounds/wingFlapRepeat.mp3")
-		} ;
-		*/
-
 		soundManager.createSoundHelper('shot1'					, "/statics/sounds/shot.mp3");
 		soundManager.createSoundHelper('shot2'					, "/statics/sounds/shot.mp3");
 		soundManager.createSoundHelper('shot3'					, "/statics/sounds/shot.mp3");
@@ -56,6 +50,14 @@ YUI().use('node', function(Y) {
 
 
 	DH.soundManager = window.soundManager ;
+
+	DH.soundManager.mute_ = function() {
+		DH.soundManager.mute();
+	};
+
+	DH.soundManager.unmute_ = function() {
+		DH.soundManager.unmute();
+	};
 
 	DH.soundManager.removeDuckNoises = function() {
 
@@ -90,6 +92,16 @@ YUI().use('node', function(Y) {
 
 	Y.Global.on(DH.Events.NO_MORE_ACTIVE_DUCKS,
 			DH.soundManager.removeDuckNoises,
+			DH.soundManager
+	);
+
+	Y.Global.on(DH.Events.WINDOW_FOCUS,
+			DH.soundManager.unmute_,
+			DH.soundManager
+	);
+
+	Y.Global.on(DH.Events.WINDOW_BLUR,
+			DH.soundManager.mute_,
 			DH.soundManager
 	);
 });
